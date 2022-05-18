@@ -1,0 +1,75 @@
+{
+  "defaults": {
+    "maxCtrnonceDelayMsgs": 20,
+    "maxSilenceIntervalMillis": 5000,
+    "sessionRenewalDurationMillis": 5000,
+    "timeoutReqToResMillis": 5000,
+    "ctrNonceUpperLimit": 16711680,
+    "sessionDurationMillis": 36000000,
+    "delayBetweenRenNotificationsMillis": 5000
+  },
+  "bus": {
+    "headerType": 0
+  },
+  "clients": [
+    {
+      "sid": 1,
+      "nickname": "Alice",
+      "ltk": "0100 0200 0300 0400 0500 0600 0700 0800",
+      "timeoutReqToResMillis": 10000
+    },
+    {
+      "sid": 2,
+      "nickname": "Bob",
+      "ltk": "0200 0000 0000 0000 0000 0000 0000 0000"
+    },
+    {
+      "sid": 3,
+      "nickname": "Charlie",
+      "ltk": "0300 0000 0000 0000 0000 0000 0000 0000"
+    }
+  ],
+  "groups": [
+    {
+      "gid": 0,
+      "maxCtrnonceDelayMsgs": 22,
+      "delayBetweenRenNotificationsMillis": 10000,
+      "sessionRenewalDurationMillis": 10000
+    },
+    {
+      "gid": 1,
+      "ctrNonceUpperLimit": 1000,
+      "clients": [
+        2,
+        3
+      ]
+    },
+    {
+      "gid": 2,
+      "maxCtrnonceDelayMsgs": 33,
+      "maxSilenceIntervalMillis": 5001,
+      "sessionRenewalDurationMillis": 30000,
+      "clients": [
+        1
+      ]
+    },
+    {
+      "gid": 3,
+      "maxCtrnonceDelayMsgs": 44,
+      "maxSilenceIntervalMillis": 5002,
+      "clients": [
+        1,
+        2
+      ]
+    },
+    {
+      "gid": 4,
+      "ctrNonceUpperLimit": 16710000,
+      "delayBetweenRenNotificationsMillis": 5077,
+      "sessionDurationMillis": 36000001,
+      "clients": [
+        3
+      ]
+    }
+  ]
+}
